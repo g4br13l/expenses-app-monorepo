@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx dist/index.js",
+    "build": "tsc && tsc-alias",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "pnpm lint --fix",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "@hono/zod-openapi": "^0.18.3",
+    "hono": "^4.6.15",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.12.1",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.17",
+    "eslint": "^9.15.0",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.7.1"
+  }
+}
