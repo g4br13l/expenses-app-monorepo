@@ -1,15 +1,15 @@
-import antfu from "@antfu/eslint-config";
-
-//NonNullable<Parameters<typeof antfu>[0]>
-
 export const eslintHonoConfig = {
   type: 'app',
   typescript: true,
-  formatters: true,
   stylistic: {
     indent: 2,
     quotes: 'single',
     semi: false,
+  },
+  formatters: {
+    css: true,
+    html: true,
+    markdown: 'prettier',
   },
   ignores: ['**/migrations/*'],
   rules: {
@@ -24,6 +24,7 @@ export const eslintHonoConfig = {
       case: 'kebabCase',
       ignore: ['README.md'],
     }],
+    'style/comma-dangle': 'off',
     'style/no-multiple-empty-lines': 'off',
     'import/newline-after-import': ['warn', { count: 3 }],
   }

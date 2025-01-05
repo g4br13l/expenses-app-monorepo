@@ -3,11 +3,10 @@
   "extends": "./base.json",
   "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "outDir": "./dist",
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
     "strict": true,

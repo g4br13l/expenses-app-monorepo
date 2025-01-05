@@ -10,7 +10,6 @@
     "./eslintHonoConfig":  "./eslint-hono-config.js"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.12.1",
     "@eslint/js": "^9.17.0",
     "@next/eslint-plugin-next": "^15.1.0",
     "@typescript-eslint/eslint-plugin": "^8.15.0",

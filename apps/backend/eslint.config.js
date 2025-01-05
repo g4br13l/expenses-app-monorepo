@@ -4,4 +4,3 @@ import { eslintHonoConfig } from '@repo/eslint-config/eslintHonoConfig'
 
 
 export default antfu(eslintHonoConfig)
-
