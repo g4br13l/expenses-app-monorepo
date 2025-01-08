@@ -3,8 +3,6 @@ import type { PinoLogger } from 'hono-pino'
 import { OpenAPIHono } from '@hono/zod-openapi'
 import { notFound, onError } from 'stoker/middlewares'
 
-import { logger } from '@/middlewares/logger'
-
 
 
 interface ExpensesT {
@@ -22,8 +20,7 @@ interface AppBindings {
 
 const app = new OpenAPIHono<AppBindings>()
 
-app.use(logger())
-// app.use(requestId())
+//app.use(logger())
 app.notFound(notFound)
 app.onError(onError)
 

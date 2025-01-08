@@ -1,3 +1,21 @@
+/*import { OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'*/
+
+//type OptionsT = OptionsConfig & Omit<TypedFlatConfigItem, 'files'>
+
+/**
+ * @typedef {import("@antfu/eslint-config").OptionsConfig} OptionsConfig
+ */
+
+/**
+ * @typedef {import("@antfu/eslint-config").TypedFlatConfigItem} TypedFlatConfigItem
+ */
+
+/**
+ * A custom ESLint configuration for libraries that use Hono.
+ * @type {OptionsConfig | TypedFlatConfigItem}
+ * */
+
+
 export const eslintHonoConfig = {
   type: 'app',
   typescript: true,
@@ -24,6 +42,11 @@ export const eslintHonoConfig = {
       case: 'kebabCase',
       ignore: ['README.md'],
     }],
+    'style/padded-blocks': ["error", {
+      "classes": "always",
+
+    }],
+    'no-trailing-spaces': 'warn',
     'style/comma-dangle': 'off',
     'style/no-multiple-empty-lines': 'off',
     'import/newline-after-import': ['warn', { count: 3 }],

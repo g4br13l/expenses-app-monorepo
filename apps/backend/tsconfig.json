@@ -1,18 +1,26 @@
 {
-  "extends": "@repo/typescript-config/hono.json",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
+    "baseUrl": "./",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
     },
-    "outDir": "./dist",
+    "outDir": "./dist"
   },
   "include": [
     "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist",
-    ".turbo",
-    "./*"
+    ".turbo"
   ]
 }
