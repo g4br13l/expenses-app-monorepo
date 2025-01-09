@@ -7,11 +7,13 @@ import envApp from '../env-app'
 
 export function loggerMid() {
 
-  const isProdEnv: boolean = !!envApp?.NODE_ENV
+  const isProdEnv = envApp?.NODE_ENV
   const logLevelEnv = envApp?.LOG_LEVEL ?? 'info'
 
+  console.log('(loggerMid) isProdEnv:', isProdEnv, ' logLevelEnv:', logLevelEnv)
+
   return pinoLogger({
-    pino: pino(isProdEnv
+    pino: pino(isProdEnv === 'prod'
       ? undefined
       : {
           transport: {

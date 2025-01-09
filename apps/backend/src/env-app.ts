@@ -13,11 +13,15 @@ const EnvSchema = z.object({
 })
 
 
+/* export type EnvAppT = z.infer<typeof EnvSchema>
+let env: EnvAppT */
+
 // eslint-disable-next-line node/no-process-env
 const { data: envApp, error } = EnvSchema.safeParse(process.env)
+console.log('(env-app.ts) envApp:', envApp)
 
 if (error) {
-  console.error('**Error** invalid env:')
+  console.error('** Error -> invalid env:')
   console.error(JSON.stringify(error.flatten().fieldErrors, null, 2))
   process.exit(1)
 }
