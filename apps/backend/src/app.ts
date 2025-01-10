@@ -1,22 +1,23 @@
-import createApp from '@/middlewares/lib/create-app'
+import { expensesRoutes } from './expenses/expenses-route'
+import { indexRoutes } from './index-route'
+import { configOpenApi } from './lib/config-open-api'
+import { createApp } from './lib/create-app'
 
 
-
-interface ExpensesT {
-  id?: number
-  name: string
-  amount: number
-}
 
 const app = createApp()
 
-app.get('/api/v1/expenses/error', () => {
-  throw new Error('Error description')
+const routesApp = [
+  indexRoutes,
+  expensesRoutes
+] as const
+
+routesApp.forEach((route) => {
+  return app.route('/api/v1', route)
 })
 
-app.get('/api/v1/expenses', (c) => {
-  return c.json({ name: 'expense A', amount: 100 } satisfies ExpensesT)
-})
+
+configOpenApi(app)
 
 
 export default app

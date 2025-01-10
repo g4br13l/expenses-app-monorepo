@@ -1,7 +1,8 @@
 import { serve } from '@hono/node-server'
 
-import app from '@/app'
-import envApp from '@/env-app'
+import app from './app'
+import envApp from './env-app'
+
 
 
 

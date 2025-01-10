@@ -46,7 +46,8 @@ export const eslintHonoConfig = {
       "classes": "always",
 
     }],
-    'no-trailing-spaces': 'warn',
+    'style/indent': 'warn',
+    'style/no-trailing-spaces': 'off',
     'style/comma-dangle': 'off',
     'style/no-multiple-empty-lines': 'off',
     'import/newline-after-import': ['warn', { count: 3 }],
