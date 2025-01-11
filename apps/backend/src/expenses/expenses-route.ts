@@ -9,8 +9,8 @@ import { createRouter } from '../lib/create-app'
 
 const ExpenseSchema = z.object({
   name: z.string(),
+  amount: z.coerce.number(),
   paid: z.boolean(),
-  amount: z.coerce.number()
 })
 type ExpenseSchemaT = z.infer<typeof ExpenseSchema>
 
@@ -34,8 +34,8 @@ export const expensesRoutes = createRouter('/expenses')
     (c) => {
       return c.json([{
         name: 'house bills',
+        amount: 1000,
         paid: false,
-        amount: 1000
       }] satisfies ExpenseSchemaT[], HttpStatus.OK)
     }
   )
@@ -62,8 +62,8 @@ export const expensesRoutes = createRouter('/expenses')
     (c) => {
       return c.json({
         name: 'new expense',
+        amount: 200,
         paid: true,
-        amount: 200
       } satisfies ExpenseSchemaT, HttpStatus.OK)
     }
   )
